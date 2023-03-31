@@ -1,6 +1,6 @@
 Name:		texlive-prooftrees
 Version:	52221
-Release:	1
+Release:	2
 Summary:	Forest-based proof trees (symbolic logic)
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/prooftrees
