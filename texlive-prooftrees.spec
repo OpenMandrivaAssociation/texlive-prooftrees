@@ -3,7 +3,7 @@ Version:	67399
 Release:	1
 Summary:	Forest-based proof trees (symbolic logic)
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/prooftrees
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/prooftrees
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/prooftrees.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/prooftrees.doc.r%{version}.tar.xz
