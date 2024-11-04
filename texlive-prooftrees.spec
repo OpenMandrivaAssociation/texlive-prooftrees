@@ -1,5 +1,5 @@
 Name:		texlive-prooftrees
-Version:	67399
+Version:	72665
 Release:	1
 Summary:	Forest-based proof trees (symbolic logic)
 Group:		Publishing
