@@ -1,47 +1,32 @@
-Name:		texlive-prooftrees
-Version:	72665
-Release:	1
+%global tl_name prooftrees
+%global tl_revision 78038
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.9.3
+Release:	%{tl_revision}.1
 Summary:	Forest-based proof trees (symbolic logic)
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/prooftrees
-License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/prooftrees.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/prooftrees.doc.r%{version}.tar.xz
+URL:		https://www.ctan.org/tex-archive/graphics/pgf/contrib/prooftrees
+License:	lppl1.3c
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/prooftrees.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/prooftrees.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/prooftrees.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package supports drawing proof trees of the kind often used
-in introductory logic classes, especially those aimed at
-students without strong mathemtical backgrounds. Hodges (1991)
-is one example of a text which uses this system. When teaching
-such a system it is especially useful to annotate the tree with
-line numbers, justifications and explanations of branch
-closures. prooftrees provides a single environment, prooftree,
-and a variety of tools for annotating, customising and
-highlighting such trees. A cross-referencing system is provided
-for trees which cite line numbers in justifications for proof
-lines or branch closures. prooftrees is based on forest and,
-hence, TikZ. The package requires version 2.0.2 of Forest for
-expected results and will not work with version 1.
+The package supports drawing proof trees of the kind often used in
+introductory logic classes, especially those aimed at students without
+strong mathematical backgrounds. Hodges (1991) is one example of a text
+which uses this system. When teaching such a system it is especially
+useful to annotate the tree with line numbers, justifications and
+explanations of branch closures. prooftrees provides a single
+environment, prooftree, and a variety of tools for annotating,
+customising and highlighting such trees. A cross-referencing system is
+provided for trees which cite line numbers in justifications for proof
+lines or branch closures. prooftrees is based on forest and, hence,
+TikZ. The package requires version 2.1+ of forest for expected results.
+It will not work with versions prior to 2.1.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/prooftrees
-%doc %{_texmfdistdir}/doc/latex/prooftrees
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
